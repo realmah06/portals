@@ -625,7 +625,9 @@ footer {
         flex-direction: column;
         padding: 1rem;
     }
-    
+    #login-btn{
+        display: none;
+    }
     .logo-container {
         margin-bottom: 1rem;
     }
