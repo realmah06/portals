@@ -670,6 +670,9 @@ footer {
 .modal-content {
     animation: fadeIn 0.3s ease;
 }
+.form-container{
+    margin: 20px;
+}
 .form-container .form-group{
     margin: 5px;
     padding: 5px;
