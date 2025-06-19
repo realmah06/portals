@@ -36,6 +36,17 @@
     color: #fff;
     transition: 0.7s;
    }
+   /* .side-bar a:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 35px;
+      background: #333;
+      color: #fff;
+      padding: 5px;
+      border-radius: 3px;
+      font-size: 12px;
+      white-space: nowrap;
+    } */
    /* a[data-tooltip] {
     position: relative;
     }
@@ -55,6 +66,52 @@
         transform: translateX(-50%);
         z-index: 100;
     } */
+     .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .head-bar{
+        background-color: #fff;
+        width: 100%;
+        top: 0;
+        position: fixed;
+        display: flex;
+        align-items: center;
+    }
+    .head-bar input{
+        padding: 7px 13px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 400px;
+        outline: none;
+        margin: 10px;
+    }
+    .tab-contents{
+        width: 100%;
+    }
+    .tab-content{
+        margin-top: 55px;
+    }
+    .tab-content h2{
+        font-size: 20px;
+        color: #000;
+    }
+    .summeries{
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        padding: 20px;
+        color: white;
+    }
+    .summeries .item{
+        min-width: 280px;
+        text-align: center;
+        min-height: 130px;
+        align-items: center;
+        color: #fff;
+        display: inline-block;
+        padding: 20px;
+    }
 </style>
 <body>
     <div class="side-bar">
@@ -66,20 +123,93 @@
         </div>
         <br>
         <div class="menu-lists">
-            <a href="#" data-tooltip="Dashboard" class="active" onclick="openTab(Dashboard)"><i class="bi bi-house-fill"></i></a>
-            <a href="#" data-tooltip="Sales Invoice" onclick="openTab(SalesInvoice)"><i class="bi bi-cart3"></i></a>
-            <a href="#" data-tooltip="Customers & Suppliers" onclick="openTab(Customers)"><i class="bi bi-people"></i></a>
-            <a href="#" data-tooltip="Cash Payment" onclick="openTab(CashPayment)"><i class="bi bi-cash-stack"></i></a>
-            <a href="#" data-tooltip="Inventory" onclick="openTab(Vendors)"><i class="bi bi-archive"></i></a>
+            <a href="#" data-tooltip="Dashboard" class="active" onclick="openTab('Dashboard')"><i class="bi bi-house-fill"></i></a>
+            <a href="#" data-tooltip="Sales Invoice" onclick="openTab('SalesInvoice')"><i class="bi bi-cart3"></i></a>
+            <a href="#" data-tooltip="Customers & Suppliers" onclick="openTab('Customers')"><i class="bi bi-people"></i></a>
+            <a href="#" data-tooltip="Cash Payment" onclick="openTab('CashPayment')"><i class="bi bi-cash-stack"></i></a>
+            <a href="#" data-tooltip="Inventory" onclick="openTab('Vendors')"><i class="bi bi-archive"></i></a>
             <a href="#" onclick="logout()"><i class="bi bi-box-arrow-left"></i></a>
         </div>
     </div>
     <div class="tab-contents">
-        <h1>Ass</h1>
+        <div class="head-bar">
+            <input type="search" placeholder="Search...">
+        </div>
+        <div id="Dashboard" class="tab-content active">
+            <center>
+            <div class="summeries">
+                <div class="item">
+                    <h3>TOTAL SALES</h3>
+                    <h1><i class="bi bi-cart3"></i></h1>
+                    <h3>0.00</h3>
+                </div>
+                <div class="item">
+                    <h3>EXPENSES</h3>
+                    <h1><i class="bi bi-credit-card-2-back"></i></h1>
+                    <h3>0.00</h3>
+                </div>
+                <div class="item">
+                    <h3>CREDIT SALES</h3>
+                    <h1><i class="bi bi-person-bounding-box"></i></h1>
+                    <h3>0.00</h3>
+                </div>
+                <div class="item">
+                    <h3>CASH SALES</h3>
+                    <h1><i class="bi bi-cash"></i></h1>
+                    <h3>0.00</h3>
+                </div>
+                <div class="item">
+                    <h3>BANK TRANSFER</h3>
+                    <h1><i class="bi bi-bank"></i></h1>
+                    <h3>0.00</h3>
+                </div>
+            </div>
+            </center>
+        </div>
+
+<div id="SalesInvoice" class="tab-content">
+  <h2>Sales Invoice</h2>
+  <p>Create and manage sales invoices.</p>
+</div>
+
+<div id="Customers" class="tab-content">
+  <h2>Customers & Suppliers</h2>
+  <p>Manage customers and suppliers here.</p>
+</div>
+
+<div id="CashPayment" class="tab-content">
+  <h2>Cash Payment</h2>
+  <p>Handle all cash payments in this section.</p>
+</div>
+
+<div id="Vendors" class="tab-content">
+  <h2>Inventory</h2>
+  <p>View and manage inventory.</p>
+</div>
     </div>
     <!-- <button onclick="logout()">Logout</button> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/sales.js"></script>
+    <script>
+        function openTab(tabName) {
+    // Hide all tab contents
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+
+    // Remove active class from all nav links
+    const navLinks = document.querySelectorAll('.menu-lists a');
+    navLinks.forEach(link => link.classList.remove('active'));
+
+    // Show the selected tab
+    document.getElementById(tabName).classList.add('active');
+
+    // Add active class to the clicked link
+    event.currentTarget.classList.add('active');
+  }
+
+
+
+    </script>
 </body>
 </html>
