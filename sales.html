@@ -115,9 +115,29 @@
         display: inline-block;
         padding: 20px;
     }
+    .toggle{
+        padding: 7px;
+        margin: 7px;
+    }
+    .toggle p{
+        font-size: 20px;
+        display: none;
+        cursor: pointer;
+    }
+    @media screen and (max-width: 545px) {
+        .side-bar{
+            display: none;
+        }
+        .head-bar{
+            justify-content: space-between;
+        }
+        .toggle #showMenu{
+            display: block;
+        }
+    }
 </style>
 <body>
-    <div class="side-bar">
+    <div class="side-bar" id="side-bar">
         <div class="brand">
             <center>
                 <img src="images/logo.jpg" alt="logo">
@@ -136,6 +156,10 @@
     </div>
     <div class="tab-contents">
         <div class="head-bar">
+            <div class="toggle">
+                <p id="showMenu"><i class="bi bi-menu-button"></i></p>
+                <p id="hideMenu"><i class="bi bi-ban"></i></p>
+            </div>
             <input type="search" placeholder="Search...">
         </div>
         <div id="Dashboard" class="tab-content active">
@@ -218,6 +242,21 @@
   }
 
 
+    const sideBar = document.getElementById('side-bar');
+    const showMenu = document.getElementById('showMenu');
+    const hideMenu = document.getElementById('hideMenu');
+
+    showMenu.onclick = function(){
+        sideBar.style.display = 'block';
+        hideMenu.style.display = 'block';
+        showMenu.style.display = 'none';
+    }
+
+    hideMenu.onclick = function(){
+        sideBar.style.display = 'none';
+        hideMenu.style.display = 'none';
+        showMenu.style.display = 'block';
+    }
 
     </script>
 </body>
