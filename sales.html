@@ -41,7 +41,7 @@
     }
 
     a[data-tooltip]:hover::after {
-        content: attr(data-tooltip); /* Displays custom text */
+        content: attr(data-tooltip);
         position: absolute;
         background: #0a314b;
         color: #fff;
@@ -71,7 +71,11 @@
             <a href="#" data-tooltip="Customers & Suppliers" onclick="openTab(Customers)"><i class="bi bi-people"></i></a>
             <a href="#" data-tooltip="Cash Payment" onclick="openTab(CashPayment)"><i class="bi bi-cash-stack"></i></a>
             <a href="#" data-tooltip="Inventory" onclick="openTab(Vendors)"><i class="bi bi-archive"></i></a>
+            <a href="#" onclick="logout()"><i class="bi bi-box-arrow-left"></i></a>
         </div>
+    </div>
+    <div class="tab-contents">
+        <h1>Ass</h1>
     </div>
     <!-- <button onclick="logout()">Logout</button> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
