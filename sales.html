@@ -36,6 +36,25 @@
     color: #fff;
     transition: 0.7s;
    }
+   a[data-tooltip] {
+    position: relative;
+    }
+
+    a[data-tooltip]:hover::after {
+        content: attr(data-tooltip); /* Displays custom text */
+        position: absolute;
+        background: #0a314b;
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 15px;
+        top: 4px;
+        font-weight: 550;
+        white-space: nowrap;
+        left: 140px;
+        transform: translateX(-50%);
+        z-index: 100;
+    }
 </style>
 <body>
     <div class="side-bar">
@@ -47,11 +66,11 @@
         </div>
         <br>
         <div class="menu-lists">
-            <a href="#" class="active" onclick="openTab(Dashboard)"><i class="bi bi-house-fill"></i></a>
-            <a href="#" onclick="openTab(SalesInvoice)"><i class="bi bi-cart3"></i></a>
-            <a href="#" onclick="openTab(Customers)"><i class="bi bi-people"></i></a>
-            <a href="#" onclick="openTab(CashPayment)"><i class="bi bi-cash-stack"></i></a>
-            <a href="#" onclick="openTab(Vendors)"><i class="bi bi-archive"></i></a>
+            <a href="#" data-tooltip="Dashboard" class="active" onclick="openTab(Dashboard)"><i class="bi bi-house-fill"></i></a>
+            <a href="#" title="Sales Invoice" onclick="openTab(SalesInvoice)"><i class="bi bi-cart3"></i></a>
+            <a href="#" title="Customers & Suppliers" onclick="openTab(Customers)"><i class="bi bi-people"></i></a>
+            <a href="#" title="Cash Payment" onclick="openTab(CashPayment)"><i class="bi bi-cash-stack"></i></a>
+            <a href="#" title="Inventory" onclick="openTab(Vendors)"><i class="bi bi-archive"></i></a>
         </div>
     </div>
     <!-- <button onclick="logout()">Logout</button> -->
