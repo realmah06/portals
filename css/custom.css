@@ -396,26 +396,4 @@ body {
     -moz-appearance: none;
     appearance: none;
    }
-   .top-bar{
-    width: 100px;
-    text-align: center;
-    background-color: #fff;
-   }
-   .top-bar .brand{
-    padding: 10px;
-   }
-   .top-bar .brand img{
-    height: 70px;
-    width: 80px;
-    mix-blend-mode: multiply;
-   }
-   .top-bar .menu-lists{
-    padding: 5px;
-   }
-   .top-bar .menu-lists a{
-    display: block;
-    color: #000;
-    margin: 3px;
-    font-size: 25px;
-    padding: 7px 10px;
-   }
+   

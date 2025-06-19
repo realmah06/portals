@@ -10,6 +10,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+<style>
+    .top-bar{
+    width: 90px;
+    text-align: center;
+    background-color: #fff;
+   }
+   .top-bar .brand{
+    padding: 10px;
+   }
+   .top-bar .brand img{
+    height: 50px;
+    width: 60px;
+    mix-blend-mode: multiply;
+   }
+   .top-bar .menu-lists a{
+    display: block;
+    color: #000;
+    margin: 3px;
+    font-size: 25px;
+    padding: 4px 10px;
+   }
+</style>
 <body>
     <div class="top-bar">
         <div class="brand">
@@ -18,10 +40,10 @@
             </center>
             <!-- <input type="search" name="search_bar" id="search_bar"> -->
         </div>
+        <br>
         <div class="menu-lists">
             <a href="sales.html"><i class="bi bi-house-fill"></i></a>
             <a href="#" onclick="openSalesTab()"><i class="bi bi-cart3"></i></a>
-            <a href="#">Cart</a>
         </div>
     </div>
     <!-- <button onclick="logout()">Logout</button> -->
