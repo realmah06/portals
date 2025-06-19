@@ -29,7 +29,12 @@
     color: #000;
     margin: 3px;
     font-size: 25px;
-    padding: 4px 10px;
+    padding: 1px 10px;
+   }
+   .side-bar .menu-lists a:hover, .side-bar .menu-lists .active{
+    background-color: #0a314b;
+    color: #fff;
+    transition: 0.7s;
    }
 </style>
 <body>
@@ -42,8 +47,11 @@
         </div>
         <br>
         <div class="menu-lists">
-            <a href="sales.html"><i class="bi bi-house-fill"></i></a>
-            <a href="#" onclick="openSalesTab()"><i class="bi bi-cart3"></i></a>
+            <a href="#" class="active" onclick="openTab(Dashboard)"><i class="bi bi-house-fill"></i></a>
+            <a href="#" onclick="openTab(SalesInvoice)"><i class="bi bi-cart3"></i></a>
+            <a href="#" onclick="openTab(Customers)"><i class="bi bi-people"></i></a>
+            <a href="#" onclick="openTab(CashPayment)"><i class="bi bi-cash-stack"></i></a>
+            <a href="#" onclick="openTab(Vendors)"><i class="bi bi-archive"></i></a>
         </div>
     </div>
     <!-- <button onclick="logout()">Logout</button> -->
